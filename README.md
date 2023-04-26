@@ -2,7 +2,7 @@ Hadoop
 ======
 
 Deploying [Hadoop Documentation][documentation] to GitHub Pages
------------------------------------------------------------------------------------------------
+---------------------------------------------------------------
 
 ```bash
 git clone https://github.com/QubitPi/hadoop.git && cd hadoop && ./start-build-env.sh

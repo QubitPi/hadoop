@@ -18,8 +18,9 @@ name: website
 
 # Controls when the action will run.
 on:
+  pull_request:
   push:
-    branches: [ trunk ]
+    branches: [ master ]
 
 jobs:
   build:
@@ -54,6 +55,5 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./staging/hadoop-project
-          user_name: 'github-actions[bot]'
-          user_email: 'github-actions[bot]@users.noreply.github.com'
-
+          user_name: QubitPi
+          user_email: jack20220723@gmail.com
