@@ -589,8 +589,6 @@ public class ITestS3AConfiguration extends AbstractHadoopTestBase {
     config.set(AWS_REGION, EU_WEST_1);
     disableFilesystemCaching(config);
     fs = S3ATestUtils.createTestFileSystem(config);
-    assumeStoreAwsHosted(fs);
-
 
     S3Client s3Client = getS3Client("testS3SpecificSignerOverride");
 
