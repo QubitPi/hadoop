@@ -18,10 +18,9 @@
 
 package org.apache.hadoop.fs.s3a.impl;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import org.apache.hadoop.classification.VisibleForTesting;
+import org.apache.hadoop.fs.s3a.impl.logging.LogControl;
+import org.apache.hadoop.fs.s3a.impl.logging.LogControllerFactory;
 
 /**
  * This class exists to support workarounds for parts of the AWS SDK
@@ -36,20 +35,16 @@ public final class AwsSdkWorkarounds {
   public static final String TRANSFER_MANAGER =
       "software.amazon.awssdk.transfer.s3.S3TransferManager";
 
-  private static final Logger LOG = LoggerFactory.getLogger(AwsSdkWorkarounds.class);
-
   private AwsSdkWorkarounds() {
   }
 
   /**
    * Prepare logging before creating AWS clients.
-   * There is currently no logging to require tuning,
-   * so this only logs at trace that it was invoked.
    * @return true if the log tuning operation took place.
    */
   public static boolean prepareLogging() {
-    LOG.trace("prepareLogging()");
-    return true;
+    return LogControllerFactory.createController().
+        setLogLevel(TRANSFER_MANAGER, LogControl.LogLevel.ERROR);
   }
 
   /**
@@ -58,6 +53,7 @@ public final class AwsSdkWorkarounds {
    */
   @VisibleForTesting
   static boolean restoreNoisyLogging() {
-    return true;
+    return LogControllerFactory.createController().
+        setLogLevel(TRANSFER_MANAGER, LogControl.LogLevel.INFO);
   }
 }
