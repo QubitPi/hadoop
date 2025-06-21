@@ -1,6 +1,8 @@
 Hadoop
 ======
 
+[![Docker Hub][Docker Pulls Badge]][Docker Hub URL]
+
 Deploying [Hadoop Documentation][documentation] to GitHub Pages
 ---------------------------------------------------------------
 
@@ -93,5 +95,6 @@ the Datanode, etc. There are more than 700 unit tests defined in this submodule 
 cd hadoop-hdfs-project && mvn package -Pdist -Dtar -Dmaven.javadoc.skip=true
 ```
 
-
-[documentation]: https://qubitpi.github.io/hadoop/hadoop-project/
+[Docker Pulls Badge]: https://img.shields.io/docker/pulls/jack20191124/kugelblitz?style=for-the-badge&logo=docker&logoColor=white&labelColor=5BBCFF&color=7EA1FF
+[Docker Hub URL]: https://hub.docker.com/r/jack20191124/hadoop
+[documentation]: https://hadoop.qubitpi.org/
