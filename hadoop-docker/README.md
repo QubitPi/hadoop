@@ -26,9 +26,8 @@ Specifically, the image offers the following features:
 - __Extensible Image__: Designed as a base image for all Hadoop-based systems, such as
   [HBase](https://hub.docker.com/r/jack20191124/hbase/).
 
-
-Obtaining Image
----------------
+Getting Image
+-------------
 
 ### Docker Hub
 
@@ -66,11 +65,11 @@ docker pull jack20191124/hadoop:3.1.3
 
 ### GitHub
 
-We could also build the image from [the source](https://github.com/QubitPi/hadoop/tree/master/.github/docker):
+We could also build the image from [the source](https://github.com/QubitPi/hadoop/tree/master/hadoop-docker):
 
 ```console
 git clone git@github.com:QubitPi/hadoop.git
-cd .github/docker
+cd hadoop-docker
 docker build -t jack20191124/hadoop .
 ```
 
@@ -230,8 +229,8 @@ The use and distribution terms for [Hadoop Docker][Docker Hub URL] are covered b
 [Apache License Badge]: https://img.shields.io/badge/Apache%202.0-FE5D26.svg?style=for-the-badge&logo=Apache&logoColor=white
 [Apache License, Version 2.0]: https://www.apache.org/licenses/LICENSE-2.0
 
-[Docker Pulls Badge]: https://img.shields.io/docker/pulls/jack20191124/kugelblitz?style=for-the-badge&logo=docker&logoColor=white&labelColor=5BBCFF&color=7EA1FF
+[Docker Pulls Badge]: https://img.shields.io/docker/pulls/jack20191124/hadoop?style=for-the-badge&logo=docker&logoColor=white&labelColor=5BBCFF&color=7EA1FF
 [Docker Hub URL]: https://hub.docker.com/r/jack20191124/hadoop
 
-[GitHub Workflow Status]: https://img.shields.io/github/actions/workflow/status/QubitPi/Kugelblitz/ci-cd.yaml?branch=master&logo=github&style=for-the-badge&label=CI/CD&labelColor=2088FF
-[GitHub Workflow URL]: https://github.com/QubitPi/Kugelblitz/actions/workflows/ci-cd.yaml
+[GitHub Workflow Status]: https://img.shields.io/github/actions/workflow/status/QubitPi/hadoop/docker.yaml?branch=master&logo=github&style=for-the-badge&label=CI/CD&labelColor=2088FF
+[GitHub Workflow URL]: https://github.com/QubitPi/hadoop/actions/workflows/docker.yaml

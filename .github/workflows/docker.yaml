@@ -60,31 +60,31 @@ jobs:
       - name: Test image build
         uses: docker/build-push-action@1dc73863535b631f98b2378be8619f83b136f4a0 # v6.17.0
         with:
-          context: .github/docker
+          context: hadoop-docker
           build-args: |
             HADOOP_VERSION=${{ matrix.hadoop-version }}
           push: false
           tags: jack20191124/hadoop:${{ matrix.hadoop-version }}
       - name: Login to DockerHub
-        if: github.ref == 'refs/heads/master'
+        #if: github.ref == 'refs/heads/master'
         uses: docker/login-action@74a5d142397b4f367a81961eba4e8cd7edddf772 # v3.4.0
         with:
           username: jack20191124
           password: ${{ secrets.DOCKERHUB_TOKEN }}
       - name: Push image to DockerHub
-        if: github.ref == 'refs/heads/master'
+        #if: github.ref == 'refs/heads/master'
         uses: docker/build-push-action@1dc73863535b631f98b2378be8619f83b136f4a0 # v6.17.0
         with:
-          context: .github/docker
+          context: hadoop-docker
           build-args: |
             HADOOP_VERSION=${{ matrix.hadoop-version }}
           push: true
           tags: jack20191124/hadoop:${{ matrix.hadoop-version }}
       - name: Push image Description
-        if: github.ref == 'refs/heads/master'
+        #if: github.ref == 'refs/heads/master'
         uses: peter-evans/dockerhub-description@432a30c9e07499fd01da9f8a49f0faf9e0ca5b77 # v4.0.2
         with:
           username: jack20191124
           password: ${{ secrets.DOCKERHUB_TOKEN }}
           repository: jack20191124/hadoop
-          readme-filepath: .github/docker/README.md
+          readme-filepath: hadoop-docker/README.md
